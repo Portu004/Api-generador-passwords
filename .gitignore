@@ -1,3 +1,20 @@
+# Dependencias
 node_modules/
+
+# Variables de entorno (¡NUNCA subir al repo!)
 .env
-mis_contrasenas.db
+.env.local
+.env.production
+
+# Base de datos SQLite (datos locales, no van al repo)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

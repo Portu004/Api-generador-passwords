@@ -22,7 +22,7 @@ db.serialize(() => {
 
 // --- 2. LÓGICA DE ENCRIPTACIÓN (AES-256-CBC) ---
 const ALGORITHM = 'aes-256-cbc';
-const rawKey = process.env.SECRET_KEY || '306100e8b2b6b5d02a0f06f2867b975f';
+const rawKey = process.env.SECRET_KEY;
 const SECRET_KEY = crypto.scryptSync(rawKey, 'salt', 32); 
 
 function encriptar(texto) {
@@ -77,7 +77,7 @@ app.get('/api/contrasenas', (req, res) => {
 });
 
 // --- 4. INICIO DEL SERVIDOR ---
-const PORT = process.env.PORT || 3017;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
 });

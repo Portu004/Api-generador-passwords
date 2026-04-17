@@ -7,7 +7,11 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    environment:
-      - PORT=3017
-      - SECRET_KEY=306100e8b2b6b5d02a0f06f2867b975f
+      # Volumen persistente para la base de datos (fuera del código)
+      - db_data:/app/data
+    env_file:
+      - .env
     restart: always
+
+volumes:
+  db_data:
