@@ -1,0 +1,13 @@
+services:
+  app-contrasenas:
+    build: .
+    container_name: gestor_contrasena_app
+    ports:
+      - "3017:3017"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PORT=3017
+      - SECRET_KEY=306100e8b2b6b5d02a0f06f2867b975f
+    restart: always
